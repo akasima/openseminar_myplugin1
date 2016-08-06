@@ -18,7 +18,6 @@ class Plugin extends AbstractPlugin
     public function boot()
     {
         // implement code
-
         $this->route();
     }
 
@@ -43,15 +42,15 @@ class Plugin extends AbstractPlugin
                             // load css file
                             XeFrontend::css($this->asset('assets/style.css'))->load();
 
-                            /* Code1-3
+                            /* Code1-2
                             //http://api.xpressengine.io/master/Xpressengine/Presenter/Html/FrontendHandler.html
                             XeFrontend::js($this->asset('assets/test1.js'))->load();
                             XeFrontend::js($this->asset('assets/test2.js'))->load();
-                            EOF Code1-3 */
-
-                            /* Code1-2
-                            return View::make('openseminar_myplugin1::views.index', ['title' => $title]);
                             EOF Code1-2 */
+
+                            /* Code1-1
+                            return View::make('openseminar_myplugin1::views.index', ['title' => $title]);
+                            EOF Code1-1 */
 
                             // output
                             return XePresenter::make('openseminar_myplugin1::views.index', ['title' => $title]);
@@ -62,7 +61,7 @@ class Plugin extends AbstractPlugin
             }
         );
 
-        /* Code1-1
+        /* Code2-1
         // 첫번째 세그먼트는 사용하지 않는게 좋음
         // 첫번째 세그먼트를 사용한 경우 xe.php  routing 에 추가
         // $baseConfig = include(__DIR__.'/../xe.php');
@@ -74,7 +73,7 @@ class Plugin extends AbstractPlugin
                 return 'text';
             }
         );
-        EOF Code1-1 */
+        EOF Code2-1 */
 
     }
 
